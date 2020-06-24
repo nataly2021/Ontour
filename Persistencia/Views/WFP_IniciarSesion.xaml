@@ -1,0 +1,23 @@
+﻿<Controls:MetroWindow x:Class="Views.WFP_IniciarSesion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Views"
+        mc:Ignorable="d"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:behaviours="clr-namespace:MahApps.Metro.Behaviours;assembly=MahApps.Metro"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"              
+        Title="SAVT Iniciar Sesión " HorizontalAlignment="Center" VerticalAlignment="Top" Height="503.699" Width="353.222"
+        Background="FloralWhite">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="#03A9F4 " Offset="1"/>
+                <GradientStop Color="Black" Offset="0.341"/>
+            </LinearGradientBrush>
+
+        </Grid.Background>
+        <Image  x:Name="imgLogin" Source="Images/SAVTDark.png" HorizontalAlignment="Left" Height="206" VerticalAlignment="Top" Width="260" Margin="48,10,0,0"/>
+    </Grid>
+</Controls:MetroWindow>

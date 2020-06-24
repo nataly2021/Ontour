@@ -1,0 +1,565 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ONTOURModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ABONOS">
+          <Key>
+            <PropertyRef Name="Nro_Abono" />
+          </Key>
+          <Property Name="Nro_Abono" Type="numeric" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="Fecha_Monto" Type="date" Nullable="false" />
+          <Property Name="Monto" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="CONTRATO_NRO_Contrato" Type="numeric" Precision="16" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CLIENTE">
+          <Key>
+            <PropertyRef Name="ID_CLIENTE" />
+            <PropertyRef Name="Rut_Cliente" />
+          </Key>
+          <Property Name="ID_CLIENTE" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="Rut_Cliente" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Nombre_Completo" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Apellido_Completo" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Corre_Electronico" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Telefono" Type="numeric" Precision="10" Scale="0" />
+          <Property Name="Tipo_Cliente" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CONTRATO_NRO_Contrato" Type="numeric" Precision="16" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CONTRATO">
+          <Key>
+            <PropertyRef Name="NRO_Contrato" />
+          </Key>
+          <Property Name="NRO_Contrato" Type="numeric" Precision="16" Scale="0" Nullable="false" />
+          <Property Name="Creacion" Type="date" Nullable="false" />
+          <Property Name="Termino" Type="date" Nullable="false" />
+          <Property Name="Modalidad" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Observaciones" Type="varchar" MaxLength="50" />
+          <Property Name="Total_Abonos" Type="numeric" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="Total_Descuento" Type="numeric" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="Total_Neto" Type="numeric" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="Valor_Total_Contrato" Type="numeric" Precision="20" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DETALLE_ABONO">
+          <Key>
+            <PropertyRef Name="ABONOS_Nro_Abono" />
+          </Key>
+          <Property Name="Nombre_Depositante" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Tipo_Documento" Type="varchar" MaxLength="20" />
+          <Property Name="Monto" Type="numeric" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="REPRESENTANTE_CURSO_RUT_Representante" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ABONOS_Nro_Abono" Type="numeric" Precision="8" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DETALLE_CONTRATO">
+          <Key>
+            <PropertyRef Name="CONTRATO_NRO_Contrato" />
+          </Key>
+          <Property Name="Descuento" Type="numeric" Precision="20" Scale="0" />
+          <Property Name="Valor_Neto" Type="numeric" Precision="30" Scale="0" Nullable="false" />
+          <Property Name="Cantidad" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="CONTRATO_NRO_Contrato" Type="numeric" Precision="16" Scale="0" Nullable="false" />
+          <Property Name="PRODUCTOS_ID_Producto" Type="varchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PRODUCTOS">
+          <Key>
+            <PropertyRef Name="ID_Producto" />
+          </Key>
+          <Property Name="ID_Producto" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="Nombre_Paquete" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Precio_Unitario" Type="numeric" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="Detalle_Producto" Type="varchar" MaxLength="60" Nullable="false" />
+        </EntityType>
+        <EntityType Name="REPRESENTANTE_CURSO">
+          <Key>
+            <PropertyRef Name="RUT_Representante" />
+          </Key>
+          <Property Name="RUT_Representante" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Nombre_Completo" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Curso" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="Colegio" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Corre_Electronico" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Telefono" Type="numeric" Precision="10" Scale="0" />
+        </EntityType>
+        <EntityType Name="SEGURO">
+          <Key>
+            <PropertyRef Name="ID_Seguro" />
+          </Key>
+          <Property Name="ID_Seguro" Type="numeric" Precision="7" Scale="0" Nullable="false" />
+          <Property Name="Nombre_Seguro" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Monto_Seguro" Type="numeric" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="CONTRATO_NRO_Contrato" Type="numeric" Precision="16" Scale="0" Nullable="false" />
+        </EntityType>
+        <Association Name="ABONOS_CONTRATO_FK">
+          <End Role="CONTRATO" Type="Self.CONTRATO" Multiplicity="1" />
+          <End Role="ABONOS" Type="Self.ABONOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CONTRATO">
+              <PropertyRef Name="NRO_Contrato" />
+            </Principal>
+            <Dependent Role="ABONOS">
+              <PropertyRef Name="CONTRATO_NRO_Contrato" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DETALLE_ABONO_ABONOS_FK">
+          <End Role="ABONOS" Type="Self.ABONOS" Multiplicity="1" />
+          <End Role="DETALLE_ABONO" Type="Self.DETALLE_ABONO" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ABONOS">
+              <PropertyRef Name="Nro_Abono" />
+            </Principal>
+            <Dependent Role="DETALLE_ABONO">
+              <PropertyRef Name="ABONOS_Nro_Abono" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DETALLE_ABONO_REPRESENTANTE_CURSO_FK">
+          <End Role="REPRESENTANTE_CURSO" Type="Self.REPRESENTANTE_CURSO" Multiplicity="1" />
+          <End Role="DETALLE_ABONO" Type="Self.DETALLE_ABONO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REPRESENTANTE_CURSO">
+              <PropertyRef Name="RUT_Representante" />
+            </Principal>
+            <Dependent Role="DETALLE_ABONO">
+              <PropertyRef Name="REPRESENTANTE_CURSO_RUT_Representante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DETALLE_CONTRATO_CONTRATO_FK">
+          <End Role="CONTRATO" Type="Self.CONTRATO" Multiplicity="1" />
+          <End Role="DETALLE_CONTRATO" Type="Self.DETALLE_CONTRATO" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="CONTRATO">
+              <PropertyRef Name="NRO_Contrato" />
+            </Principal>
+            <Dependent Role="DETALLE_CONTRATO">
+              <PropertyRef Name="CONTRATO_NRO_Contrato" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DETALLE_CONTRATO_PRODUCTOS_FK">
+          <End Role="PRODUCTOS" Type="Self.PRODUCTOS" Multiplicity="1" />
+          <End Role="DETALLE_CONTRATO" Type="Self.DETALLE_CONTRATO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTOS">
+              <PropertyRef Name="ID_Producto" />
+            </Principal>
+            <Dependent Role="DETALLE_CONTRATO">
+              <PropertyRef Name="PRODUCTOS_ID_Producto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SEGURO_CONTRATO_FK">
+          <End Role="CONTRATO" Type="Self.CONTRATO" Multiplicity="1" />
+          <End Role="SEGURO" Type="Self.SEGURO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CONTRATO">
+              <PropertyRef Name="NRO_Contrato" />
+            </Principal>
+            <Dependent Role="SEGURO">
+              <PropertyRef Name="CONTRATO_NRO_Contrato" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TIPO_CLIENTE_CONTRATO_FK">
+          <End Role="CONTRATO" Type="Self.CONTRATO" Multiplicity="1" />
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CONTRATO">
+              <PropertyRef Name="NRO_Contrato" />
+            </Principal>
+            <Dependent Role="CLIENTE">
+              <PropertyRef Name="CONTRATO_NRO_Contrato" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ONTOURModelStoreContainer">
+          <EntitySet Name="ABONOS" EntityType="Self.ABONOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CONTRATO" EntityType="Self.CONTRATO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DETALLE_ABONO" EntityType="Self.DETALLE_ABONO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DETALLE_CONTRATO" EntityType="Self.DETALLE_CONTRATO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PRODUCTOS" EntityType="Self.PRODUCTOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="REPRESENTANTE_CURSO" EntityType="Self.REPRESENTANTE_CURSO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SEGURO" EntityType="Self.SEGURO" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="ABONOS_CONTRATO_FK" Association="Self.ABONOS_CONTRATO_FK">
+            <End Role="CONTRATO" EntitySet="CONTRATO" />
+            <End Role="ABONOS" EntitySet="ABONOS" />
+          </AssociationSet>
+          <AssociationSet Name="DETALLE_ABONO_ABONOS_FK" Association="Self.DETALLE_ABONO_ABONOS_FK">
+            <End Role="ABONOS" EntitySet="ABONOS" />
+            <End Role="DETALLE_ABONO" EntitySet="DETALLE_ABONO" />
+          </AssociationSet>
+          <AssociationSet Name="DETALLE_ABONO_REPRESENTANTE_CURSO_FK" Association="Self.DETALLE_ABONO_REPRESENTANTE_CURSO_FK">
+            <End Role="REPRESENTANTE_CURSO" EntitySet="REPRESENTANTE_CURSO" />
+            <End Role="DETALLE_ABONO" EntitySet="DETALLE_ABONO" />
+          </AssociationSet>
+          <AssociationSet Name="DETALLE_CONTRATO_CONTRATO_FK" Association="Self.DETALLE_CONTRATO_CONTRATO_FK">
+            <End Role="CONTRATO" EntitySet="CONTRATO" />
+            <End Role="DETALLE_CONTRATO" EntitySet="DETALLE_CONTRATO" />
+          </AssociationSet>
+          <AssociationSet Name="DETALLE_CONTRATO_PRODUCTOS_FK" Association="Self.DETALLE_CONTRATO_PRODUCTOS_FK">
+            <End Role="PRODUCTOS" EntitySet="PRODUCTOS" />
+            <End Role="DETALLE_CONTRATO" EntitySet="DETALLE_CONTRATO" />
+          </AssociationSet>
+          <AssociationSet Name="SEGURO_CONTRATO_FK" Association="Self.SEGURO_CONTRATO_FK">
+            <End Role="CONTRATO" EntitySet="CONTRATO" />
+            <End Role="SEGURO" EntitySet="SEGURO" />
+          </AssociationSet>
+          <AssociationSet Name="TIPO_CLIENTE_CONTRATO_FK" Association="Self.TIPO_CLIENTE_CONTRATO_FK">
+            <End Role="CONTRATO" EntitySet="CONTRATO" />
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ONTOURModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ABONOS">
+          <Key>
+            <PropertyRef Name="Nro_Abono" />
+          </Key>
+          <Property Name="Nro_Abono" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="Fecha_Monto" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Monto" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="CONTRATO_NRO_Contrato" Type="Decimal" Precision="16" Scale="0" Nullable="false" />
+          <NavigationProperty Name="CONTRATO" Relationship="Self.ABONOS_CONTRATO_FK" FromRole="ABONOS" ToRole="CONTRATO" />
+          <NavigationProperty Name="DETALLE_ABONO" Relationship="Self.DETALLE_ABONO_ABONOS_FK" FromRole="ABONOS" ToRole="DETALLE_ABONO" />
+        </EntityType>
+        <EntityType Name="CLIENTE">
+          <Key>
+            <PropertyRef Name="ID_CLIENTE" />
+            <PropertyRef Name="Rut_Cliente" />
+          </Key>
+          <Property Name="ID_CLIENTE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Rut_Cliente" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre_Completo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Apellido_Completo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Corre_Electronico" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Telefono" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="Tipo_Cliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CONTRATO_NRO_Contrato" Type="Decimal" Precision="16" Scale="0" Nullable="false" />
+          <NavigationProperty Name="CONTRATO" Relationship="Self.TIPO_CLIENTE_CONTRATO_FK" FromRole="CLIENTE" ToRole="CONTRATO" />
+        </EntityType>
+        <EntityType Name="CONTRATO">
+          <Key>
+            <PropertyRef Name="NRO_Contrato" />
+          </Key>
+          <Property Name="NRO_Contrato" Type="Decimal" Precision="16" Scale="0" Nullable="false" />
+          <Property Name="Creacion" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Termino" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Modalidad" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Observaciones" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Total_Abonos" Type="Decimal" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="Total_Descuento" Type="Decimal" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="Total_Neto" Type="Decimal" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="Valor_Total_Contrato" Type="Decimal" Precision="20" Scale="0" Nullable="false" />
+          <NavigationProperty Name="ABONOS" Relationship="Self.ABONOS_CONTRATO_FK" FromRole="CONTRATO" ToRole="ABONOS" />
+          <NavigationProperty Name="CLIENTE" Relationship="Self.TIPO_CLIENTE_CONTRATO_FK" FromRole="CONTRATO" ToRole="CLIENTE" />
+          <NavigationProperty Name="DETALLE_CONTRATO" Relationship="Self.DETALLE_CONTRATO_CONTRATO_FK" FromRole="CONTRATO" ToRole="DETALLE_CONTRATO" />
+          <NavigationProperty Name="SEGURO" Relationship="Self.SEGURO_CONTRATO_FK" FromRole="CONTRATO" ToRole="SEGURO" />
+        </EntityType>
+        <EntityType Name="DETALLE_ABONO">
+          <Key>
+            <PropertyRef Name="ABONOS_Nro_Abono" />
+          </Key>
+          <Property Name="Nombre_Depositante" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Tipo_Documento" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Monto" Type="Decimal" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="REPRESENTANTE_CURSO_RUT_Representante" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ABONOS_Nro_Abono" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+          <NavigationProperty Name="ABONOS" Relationship="Self.DETALLE_ABONO_ABONOS_FK" FromRole="DETALLE_ABONO" ToRole="ABONOS" />
+          <NavigationProperty Name="REPRESENTANTE_CURSO" Relationship="Self.DETALLE_ABONO_REPRESENTANTE_CURSO_FK" FromRole="DETALLE_ABONO" ToRole="REPRESENTANTE_CURSO" />
+        </EntityType>
+        <EntityType Name="DETALLE_CONTRATO">
+          <Key>
+            <PropertyRef Name="CONTRATO_NRO_Contrato" />
+          </Key>
+          <Property Name="Descuento" Type="Decimal" Precision="20" Scale="0" />
+          <Property Name="Valor_Neto" Type="Decimal" Precision="30" Scale="0" Nullable="false" />
+          <Property Name="Cantidad" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="CONTRATO_NRO_Contrato" Type="Decimal" Precision="16" Scale="0" Nullable="false" />
+          <Property Name="PRODUCTOS_ID_Producto" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CONTRATO" Relationship="Self.DETALLE_CONTRATO_CONTRATO_FK" FromRole="DETALLE_CONTRATO" ToRole="CONTRATO" />
+          <NavigationProperty Name="PRODUCTOS" Relationship="Self.DETALLE_CONTRATO_PRODUCTOS_FK" FromRole="DETALLE_CONTRATO" ToRole="PRODUCTOS" />
+        </EntityType>
+        <EntityType Name="PRODUCTOS">
+          <Key>
+            <PropertyRef Name="ID_Producto" />
+          </Key>
+          <Property Name="ID_Producto" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre_Paquete" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Precio_Unitario" Type="Decimal" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="Detalle_Producto" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="DETALLE_CONTRATO" Relationship="Self.DETALLE_CONTRATO_PRODUCTOS_FK" FromRole="PRODUCTOS" ToRole="DETALLE_CONTRATO" />
+        </EntityType>
+        <EntityType Name="REPRESENTANTE_CURSO">
+          <Key>
+            <PropertyRef Name="RUT_Representante" />
+          </Key>
+          <Property Name="RUT_Representante" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre_Completo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Curso" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Colegio" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Corre_Electronico" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Telefono" Type="Decimal" Precision="10" Scale="0" />
+          <NavigationProperty Name="DETALLE_ABONO" Relationship="Self.DETALLE_ABONO_REPRESENTANTE_CURSO_FK" FromRole="REPRESENTANTE_CURSO" ToRole="DETALLE_ABONO" />
+        </EntityType>
+        <EntityType Name="SEGURO">
+          <Key>
+            <PropertyRef Name="ID_Seguro" />
+          </Key>
+          <Property Name="ID_Seguro" Type="Decimal" Precision="7" Scale="0" Nullable="false" />
+          <Property Name="Nombre_Seguro" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Monto_Seguro" Type="Decimal" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="CONTRATO_NRO_Contrato" Type="Decimal" Precision="16" Scale="0" Nullable="false" />
+          <NavigationProperty Name="CONTRATO" Relationship="Self.SEGURO_CONTRATO_FK" FromRole="SEGURO" ToRole="CONTRATO" />
+        </EntityType>
+        <Association Name="ABONOS_CONTRATO_FK">
+          <End Role="CONTRATO" Type="Self.CONTRATO" Multiplicity="1" />
+          <End Role="ABONOS" Type="Self.ABONOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CONTRATO">
+              <PropertyRef Name="NRO_Contrato" />
+            </Principal>
+            <Dependent Role="ABONOS">
+              <PropertyRef Name="CONTRATO_NRO_Contrato" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DETALLE_ABONO_ABONOS_FK">
+          <End Role="ABONOS" Type="Self.ABONOS" Multiplicity="1" />
+          <End Role="DETALLE_ABONO" Type="Self.DETALLE_ABONO" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ABONOS">
+              <PropertyRef Name="Nro_Abono" />
+            </Principal>
+            <Dependent Role="DETALLE_ABONO">
+              <PropertyRef Name="ABONOS_Nro_Abono" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TIPO_CLIENTE_CONTRATO_FK">
+          <End Role="CONTRATO" Type="Self.CONTRATO" Multiplicity="1" />
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CONTRATO">
+              <PropertyRef Name="NRO_Contrato" />
+            </Principal>
+            <Dependent Role="CLIENTE">
+              <PropertyRef Name="CONTRATO_NRO_Contrato" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DETALLE_CONTRATO_CONTRATO_FK">
+          <End Role="CONTRATO" Type="Self.CONTRATO" Multiplicity="1" />
+          <End Role="DETALLE_CONTRATO" Type="Self.DETALLE_CONTRATO" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="CONTRATO">
+              <PropertyRef Name="NRO_Contrato" />
+            </Principal>
+            <Dependent Role="DETALLE_CONTRATO">
+              <PropertyRef Name="CONTRATO_NRO_Contrato" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SEGURO_CONTRATO_FK">
+          <End Role="CONTRATO" Type="Self.CONTRATO" Multiplicity="1" />
+          <End Role="SEGURO" Type="Self.SEGURO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CONTRATO">
+              <PropertyRef Name="NRO_Contrato" />
+            </Principal>
+            <Dependent Role="SEGURO">
+              <PropertyRef Name="CONTRATO_NRO_Contrato" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DETALLE_ABONO_REPRESENTANTE_CURSO_FK">
+          <End Role="REPRESENTANTE_CURSO" Type="Self.REPRESENTANTE_CURSO" Multiplicity="1" />
+          <End Role="DETALLE_ABONO" Type="Self.DETALLE_ABONO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REPRESENTANTE_CURSO">
+              <PropertyRef Name="RUT_Representante" />
+            </Principal>
+            <Dependent Role="DETALLE_ABONO">
+              <PropertyRef Name="REPRESENTANTE_CURSO_RUT_Representante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DETALLE_CONTRATO_PRODUCTOS_FK">
+          <End Role="PRODUCTOS" Type="Self.PRODUCTOS" Multiplicity="1" />
+          <End Role="DETALLE_CONTRATO" Type="Self.DETALLE_CONTRATO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTOS">
+              <PropertyRef Name="ID_Producto" />
+            </Principal>
+            <Dependent Role="DETALLE_CONTRATO">
+              <PropertyRef Name="PRODUCTOS_ID_Producto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ONTOUREntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ABONOS" EntityType="Self.ABONOS" />
+          <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" />
+          <EntitySet Name="CONTRATO" EntityType="Self.CONTRATO" />
+          <EntitySet Name="DETALLE_ABONO" EntityType="Self.DETALLE_ABONO" />
+          <EntitySet Name="DETALLE_CONTRATO" EntityType="Self.DETALLE_CONTRATO" />
+          <EntitySet Name="PRODUCTOS" EntityType="Self.PRODUCTOS" />
+          <EntitySet Name="REPRESENTANTE_CURSO" EntityType="Self.REPRESENTANTE_CURSO" />
+          <EntitySet Name="SEGURO" EntityType="Self.SEGURO" />
+          <AssociationSet Name="ABONOS_CONTRATO_FK" Association="Self.ABONOS_CONTRATO_FK">
+            <End Role="CONTRATO" EntitySet="CONTRATO" />
+            <End Role="ABONOS" EntitySet="ABONOS" />
+          </AssociationSet>
+          <AssociationSet Name="DETALLE_ABONO_ABONOS_FK" Association="Self.DETALLE_ABONO_ABONOS_FK">
+            <End Role="ABONOS" EntitySet="ABONOS" />
+            <End Role="DETALLE_ABONO" EntitySet="DETALLE_ABONO" />
+          </AssociationSet>
+          <AssociationSet Name="TIPO_CLIENTE_CONTRATO_FK" Association="Self.TIPO_CLIENTE_CONTRATO_FK">
+            <End Role="CONTRATO" EntitySet="CONTRATO" />
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+          </AssociationSet>
+          <AssociationSet Name="DETALLE_CONTRATO_CONTRATO_FK" Association="Self.DETALLE_CONTRATO_CONTRATO_FK">
+            <End Role="CONTRATO" EntitySet="CONTRATO" />
+            <End Role="DETALLE_CONTRATO" EntitySet="DETALLE_CONTRATO" />
+          </AssociationSet>
+          <AssociationSet Name="SEGURO_CONTRATO_FK" Association="Self.SEGURO_CONTRATO_FK">
+            <End Role="CONTRATO" EntitySet="CONTRATO" />
+            <End Role="SEGURO" EntitySet="SEGURO" />
+          </AssociationSet>
+          <AssociationSet Name="DETALLE_ABONO_REPRESENTANTE_CURSO_FK" Association="Self.DETALLE_ABONO_REPRESENTANTE_CURSO_FK">
+            <End Role="REPRESENTANTE_CURSO" EntitySet="REPRESENTANTE_CURSO" />
+            <End Role="DETALLE_ABONO" EntitySet="DETALLE_ABONO" />
+          </AssociationSet>
+          <AssociationSet Name="DETALLE_CONTRATO_PRODUCTOS_FK" Association="Self.DETALLE_CONTRATO_PRODUCTOS_FK">
+            <End Role="PRODUCTOS" EntitySet="PRODUCTOS" />
+            <End Role="DETALLE_CONTRATO" EntitySet="DETALLE_CONTRATO" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ONTOURModelStoreContainer" CdmEntityContainer="ONTOUREntities">
+          <EntitySetMapping Name="ABONOS">
+            <EntityTypeMapping TypeName="ONTOURModel.ABONOS">
+              <MappingFragment StoreEntitySet="ABONOS">
+                <ScalarProperty Name="Nro_Abono" ColumnName="Nro_Abono" />
+                <ScalarProperty Name="Fecha_Monto" ColumnName="Fecha_Monto" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="CONTRATO_NRO_Contrato" ColumnName="CONTRATO_NRO_Contrato" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CLIENTE">
+            <EntityTypeMapping TypeName="ONTOURModel.CLIENTE">
+              <MappingFragment StoreEntitySet="CLIENTE">
+                <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+                <ScalarProperty Name="Rut_Cliente" ColumnName="Rut_Cliente" />
+                <ScalarProperty Name="Nombre_Completo" ColumnName="Nombre_Completo" />
+                <ScalarProperty Name="Apellido_Completo" ColumnName="Apellido_Completo" />
+                <ScalarProperty Name="Corre_Electronico" ColumnName="Corre_Electronico" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Tipo_Cliente" ColumnName="Tipo_Cliente" />
+                <ScalarProperty Name="CONTRATO_NRO_Contrato" ColumnName="CONTRATO_NRO_Contrato" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CONTRATO">
+            <EntityTypeMapping TypeName="ONTOURModel.CONTRATO">
+              <MappingFragment StoreEntitySet="CONTRATO">
+                <ScalarProperty Name="NRO_Contrato" ColumnName="NRO_Contrato" />
+                <ScalarProperty Name="Creacion" ColumnName="Creacion" />
+                <ScalarProperty Name="Termino" ColumnName="Termino" />
+                <ScalarProperty Name="Modalidad" ColumnName="Modalidad" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="Total_Abonos" ColumnName="Total_Abonos" />
+                <ScalarProperty Name="Total_Descuento" ColumnName="Total_Descuento" />
+                <ScalarProperty Name="Total_Neto" ColumnName="Total_Neto" />
+                <ScalarProperty Name="Valor_Total_Contrato" ColumnName="Valor_Total_Contrato" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DETALLE_ABONO">
+            <EntityTypeMapping TypeName="ONTOURModel.DETALLE_ABONO">
+              <MappingFragment StoreEntitySet="DETALLE_ABONO">
+                <ScalarProperty Name="Nombre_Depositante" ColumnName="Nombre_Depositante" />
+                <ScalarProperty Name="Tipo_Documento" ColumnName="Tipo_Documento" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="REPRESENTANTE_CURSO_RUT_Representante" ColumnName="REPRESENTANTE_CURSO_RUT_Representante" />
+                <ScalarProperty Name="ABONOS_Nro_Abono" ColumnName="ABONOS_Nro_Abono" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DETALLE_CONTRATO">
+            <EntityTypeMapping TypeName="ONTOURModel.DETALLE_CONTRATO">
+              <MappingFragment StoreEntitySet="DETALLE_CONTRATO">
+                <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+                <ScalarProperty Name="Valor_Neto" ColumnName="Valor_Neto" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="CONTRATO_NRO_Contrato" ColumnName="CONTRATO_NRO_Contrato" />
+                <ScalarProperty Name="PRODUCTOS_ID_Producto" ColumnName="PRODUCTOS_ID_Producto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRODUCTOS">
+            <EntityTypeMapping TypeName="ONTOURModel.PRODUCTOS">
+              <MappingFragment StoreEntitySet="PRODUCTOS">
+                <ScalarProperty Name="ID_Producto" ColumnName="ID_Producto" />
+                <ScalarProperty Name="Nombre_Paquete" ColumnName="Nombre_Paquete" />
+                <ScalarProperty Name="Precio_Unitario" ColumnName="Precio_Unitario" />
+                <ScalarProperty Name="Detalle_Producto" ColumnName="Detalle_Producto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REPRESENTANTE_CURSO">
+            <EntityTypeMapping TypeName="ONTOURModel.REPRESENTANTE_CURSO">
+              <MappingFragment StoreEntitySet="REPRESENTANTE_CURSO">
+                <ScalarProperty Name="RUT_Representante" ColumnName="RUT_Representante" />
+                <ScalarProperty Name="Nombre_Completo" ColumnName="Nombre_Completo" />
+                <ScalarProperty Name="Curso" ColumnName="Curso" />
+                <ScalarProperty Name="Colegio" ColumnName="Colegio" />
+                <ScalarProperty Name="Corre_Electronico" ColumnName="Corre_Electronico" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SEGURO">
+            <EntityTypeMapping TypeName="ONTOURModel.SEGURO">
+              <MappingFragment StoreEntitySet="SEGURO">
+                <ScalarProperty Name="ID_Seguro" ColumnName="ID_Seguro" />
+                <ScalarProperty Name="Nombre_Seguro" ColumnName="Nombre_Seguro" />
+                <ScalarProperty Name="Monto_Seguro" ColumnName="Monto_Seguro" />
+                <ScalarProperty Name="CONTRATO_NRO_Contrato" ColumnName="CONTRATO_NRO_Contrato" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
