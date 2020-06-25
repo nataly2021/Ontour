@@ -19,11 +19,22 @@ namespace Views
     /// <summary>
     /// Lógica de interacción para WFP_IniciarSesion.xaml
     /// </summary>
-    public partial class WFP_IniciarSesion : MetroWindow
+    public partial class WFP_Login : Window
     {
-        public WFP_IniciarSesion()
+        public WFP_Login()
         {
             InitializeComponent();
+        }
+
+        private void OnClick(object sender, RoutedEventArgs e)
+        {
+            
+            string user_input = usuario.Text;
+            string pass_input = password.Password;
+             
+            WPF_MenuPrincipal window = new WPF_MenuPrincipal();
+            window.Show();
+            this.Close();
         }
     }
 }
