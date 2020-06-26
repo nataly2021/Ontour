@@ -1,0 +1,124 @@
+﻿<Window x:Class="Views.WPF_MenuPrincipal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Views"
+        mc:Ignorable="d"
+        Title="SAVT" Height="500" Width="600"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        AllowsTransparency="True" 
+        Background="Transparent">
+    <Grid Background="White">
+
+
+        <Border CornerRadius="5" RenderTransformOrigin="0.482,0.606">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#7be9f6" Offset="0.0"/>
+                    <GradientStop Color="#f083d8" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+
+        </Border>
+        <Button x:Name="btn_reg_cliente"
+                 
+                HorizontalAlignment="Left" 
+                Margin="31,130,0,0" 
+                VerticalAlignment="Top" 
+                Width="140" 
+                Height="120" Click="Btn_reg_cliente_Click"
+                >
+            <StackPanel Orientation="Horizontal">
+                <Image Source="Images/reg_user.png" Height="112" Width="135"/>
+            </StackPanel>
+        </Button>
+
+        <Button x:Name="btn_reg_contrato"
+            
+            HorizontalAlignment="Left" 
+            Margin="229,130,0,0" 
+            VerticalAlignment="Top" 
+            Width="140" 
+            Height="120" Click="Btn_reg_contrato_Click"
+            >
+            <StackPanel>
+                <Image Source="Images/reg_contrato.png"
+                       Stretch="Uniform"
+                       Height="100" Width="107"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="btn_agr_seg"
+           
+            HorizontalAlignment="Left" 
+            Margin="121,294,0,0" 
+            VerticalAlignment="Top" 
+            Width="140" 
+            Height="120" Click="Btn_agr_seg_Click">
+            <StackPanel>
+                <Image Source="Images/ag_seguro.png"
+                       Stretch="Uniform"
+                       Height="109" Width="111"/>
+            </StackPanel>
+
+        </Button>
+        <Button x:Name="btn_subir_doc"
+            
+            HorizontalAlignment="Left" 
+            Margin="332,294,0,0" 
+            VerticalAlignment="Top" 
+            Width="140" 
+            Height="120" Click="Btn_subir_doc_Click">
+            <StackPanel>
+                <Image Source="Images/subir_doc.png"
+                       Stretch="Uniform"
+                       Height="104" Width="103"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="btn_consultar_monto"
+            
+            HorizontalAlignment="Left" 
+            Margin="420,130,0,0" 
+            VerticalAlignment="Top" 
+            Width="140" 
+            Height="120" Click="Btn_consultar_monto_Click">
+            <StackPanel>
+                <Image Source="Images/ag_monto.png"
+                       Stretch="Uniform"
+                       Height="119" Width="116"/>
+            </StackPanel>
+
+        </Button>
+        <Label Content="Registrar Cliente" HorizontalAlignment="Left" Margin="44,255,0,0" VerticalAlignment="Top" Width="140"
+               FontFamily="Helvetica"
+               FontStyle="Normal"
+               FontSize="15"
+               FontWeight="Light"/>
+        <Label Content="Registrar Contrato" HorizontalAlignment="Left" Margin="241,255,0,0" VerticalAlignment="Top" Width="128"
+                FontFamily="Cursive"
+                FontStyle="Normal"
+                FontSize="15"
+               FontWeight="Light"/>
+        <Label Content="Agregar Seguro" HorizontalAlignment="Left" Margin="138,419,0,0" VerticalAlignment="Top" Width="123"
+                FontFamily="Cursive"
+                FontStyle="Normal"
+                FontSize="15"
+                FontWeight="Light"/>
+        <Label Content="Consultar Monto" HorizontalAlignment="Left" Margin="420,255,0,0" VerticalAlignment="Top" Width="151"
+                FontFamily="Cursive"
+                FontStyle="Normal"
+                FontSize="15"
+               FontWeight="Light"
+               FontStretch="Condensed"/>
+        <Label Content="Subir Documento" HorizontalAlignment="Left" Margin="341,419,0,0" VerticalAlignment="Top" Width="151"
+                FontFamily="Cursive"
+                FontStyle="Normal"
+                FontSize="15"
+                FontWeight="Light"/>
+        <Image Source="Images/logo_savt.png" Margin="171,-42,185,334"/>
+
+    </Grid>
+</Window>
