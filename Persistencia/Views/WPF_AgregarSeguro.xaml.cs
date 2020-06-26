@@ -28,7 +28,7 @@ namespace Views
             InitializeComponent();
         }
 
-        private  void RegistrarAutor()
+        private  void RegistrarSeguro()
         {
             try
             {
@@ -56,7 +56,7 @@ namespace Views
 
        private void Btn_agregar_Click(object sender, RoutedEventArgs e)
         {
-            RegistrarAutor();
+            RegistrarSeguro();
         }
 
         private void Btn_atras_Click(object sender, RoutedEventArgs e)
