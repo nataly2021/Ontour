@@ -45,8 +45,8 @@
                 <StackPanel Grid.Row="2">
                     <StackPanel Orientation="Horizontal">
                         <TextBox 
-                         adorners:Watermark.Text="Usuario.." 
-                         Name="usuario"
+                         adorners:Watermark.Text="Usuario"
+                         x:Name="Txtusuario"
                          adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"
                          FontWeight="Light"                        
                          FontFamily="Helvetica"
@@ -75,7 +75,7 @@
                     <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
                         <PasswordBox FontFamily="Helvetica"
                          FontWeight="Light"
-                         Name="password"
+                         x:Name="txtpassword"
                          adorners:Watermark.Text="Contraseña.." 
                          adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"
                          FontSize="20"
@@ -104,7 +104,7 @@
                     Opacity="0.5"/>
 
                     <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
-                        <Button Width="100" Height="40" Content="ENTRAR" Margin="130,0,0,0"
+                        <Button x:Name="btnEntrar" Width="100" Height="40" Content="ENTRAR" Margin="130,0,0,0"
                                 Click="OnClick"/>
                     </StackPanel>
                 </StackPanel>
@@ -112,4 +112,4 @@
             </Grid>
         </Grid>
     </UserControl>
-</Window>
+    </Window>

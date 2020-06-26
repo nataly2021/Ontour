@@ -20,21 +20,40 @@ namespace Views
     /// Lógica de interacción para WFP_IniciarSesion.xaml
     /// </summary>
     public partial class WFP_Login : Window
+
     {
+        string usuario = "admin";
+        string password = "123";
+
         public WFP_Login()
         {
             InitializeComponent();
         }
 
+        private  void ValidarIngreso()
+        {
+            if (Txtusuario.Text.Equals(usuario) && txtpassword.Password.Equals(password))
+            {
+                WPF_MenuPrincipal window = new WPF_MenuPrincipal();
+                window.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Error", "Nombre usuario y/o contraseña inválidos");
+            }
+        }
+
+
         private void OnClick(object sender, RoutedEventArgs e)
         {
-            
-            string user_input = usuario.Text;
-            string pass_input = password.Password;
-             
-            WPF_MenuPrincipal window = new WPF_MenuPrincipal();
-            window.Show();
-            this.Close();
+            ValidarIngreso();
+            // string user_input =usuario.Text;
+            //string pass_input = password.Password;
+
+            //WPF_MenuPrincipal window = new WPF_MenuPrincipal();
+            //window.Show();
+            //this.Close();
         }
     }
 }
