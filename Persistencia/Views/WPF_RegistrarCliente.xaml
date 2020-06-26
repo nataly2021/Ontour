@@ -25,15 +25,15 @@
         </Border>
 
 
-        <TextBox TextWrapping="Wrap" Text="" Margin="150,226,150,248"
+        <TextBox x:Name="txtrut" TextWrapping="Wrap" Text="" Margin="150,226,150,248"
                      Background="White" RenderTransformOrigin="0.492,2.231"/>
-        <TextBox TextWrapping="Wrap" Text="" Margin="150,388,150,86"
+        <TextBox x:Name="txtmail" TextWrapping="Wrap" Text="" Margin="150,388,150,86"
                      Background="White"/>
-        <TextBox TextWrapping="Wrap" Text="" Margin="150,334,150,140"
+        <TextBox x:Name="txtApellido" TextWrapping="Wrap" Text="" Margin="150,334,150,140"
                      Background="White"/>
-        <TextBox TextWrapping="Wrap" Text="" Margin="150,280,150,194"
+        <TextBox x:Name="txtnombre" TextWrapping="Wrap" Text="" Margin="150,280,150,194"
                      Background="White"/>
-        <TextBox TextWrapping="Wrap" Text="" Margin="150,442,150,32"
+        <TextBox x:Name="txttelefono" TextWrapping="Wrap" Text="" Margin="150,442,150,32"
                      Background="White"/>
         <Label Content="Registrar Cliente"
                    FontSize="28"
