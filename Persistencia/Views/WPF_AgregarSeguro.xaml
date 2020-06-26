@@ -35,8 +35,8 @@
         <Label Content="Monto Seguro: " Margin="152.561,297,332,170"
                FontWeight="Light"
                FontSize="15" Grid.Column="1"/>
-        <TextBox Background="White" Margin="270.561,232,143,238" Grid.Column="1"/>
-        <TextBox Background="White" Margin="270.561,297,143,173" Grid.Column="1"/>
+        <TextBox Name="txtSeguroName" Background="White" Margin="270.561,232,143,238" Grid.Column="1"/>
+        <TextBox Name="txtSeguroMonto" Background="White" Margin="270.561,297,143,173" Grid.Column="1"/>
         <Button x:Name="btn_agregar" Content="Agregar"
                 Background="#35759E"
                 FontSize="15"
