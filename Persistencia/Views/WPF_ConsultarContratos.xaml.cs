@@ -23,5 +23,12 @@ namespace Views
         {
             InitializeComponent();
         }
+
+        private void Btn_atras_Click(object sender, RoutedEventArgs e)
+        {
+            WPF_RegistrarContrato rc = new WPF_RegistrarContrato();
+            rc.Show();
+            this.Close();
+        }
     }
 }

@@ -11,14 +11,14 @@
         ResizeMode="NoResize"
         AllowsTransparency="True" 
         Background="Transparent">
-    <Grid Background="White">
+    <Grid Background="Transparent">
 
 
         <Border CornerRadius="5" RenderTransformOrigin="0.482,0.606">
             <Border.Background>
                 <LinearGradientBrush>
-                    <GradientStop Color="#7be9f6" Offset="0.0"/>
-                    <GradientStop Color="#f083d8" Offset="1"/>
+                    <GradientStop Color="#28313B" Offset="0.0"/>
+                    <GradientStop Color="#485461" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
 
@@ -95,23 +95,27 @@
                FontFamily="Helvetica"
                FontStyle="Normal"
                FontSize="15"
-               FontWeight="Light"/>
+               FontWeight="Light"
+               Foreground="White"/>
         <Label Content="Contratos" HorizontalAlignment="Left" Margin="409,250,0,0" VerticalAlignment="Top" Width="73"
                 FontFamily="Cursive"
                 FontStyle="Normal"
                 FontSize="15"
-               FontWeight="Light"/>
+               FontWeight="Light"
+               Foreground="White"/>
         <Label Content="Agregar Seguro" HorizontalAlignment="Left" Margin="94,413,0,0" VerticalAlignment="Top" Width="113"
                 FontFamily="Cursive"
                 FontStyle="Normal"
                 FontSize="15"
-                FontWeight="Light"/>
+                FontWeight="Light"
+               Foreground="White"/>
         <Label Content="Consultar Monto" HorizontalAlignment="Left" Margin="389,413,0,0" VerticalAlignment="Top" Width="120"
                 FontFamily="Cursive"
                 FontStyle="Normal"
                 FontSize="15"
                FontWeight="Light"
-               FontStretch="Condensed"/>
+               FontStretch="Condensed"
+               Foreground="White"/>
         <Image Source="Images/logo_savt.png" Margin="171,-42,185,334"/>
 
     </Grid>

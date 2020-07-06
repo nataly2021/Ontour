@@ -15,8 +15,8 @@
         <Border CornerRadius="5" RenderTransformOrigin="0.482,0.606">
             <Border.Background>
                 <LinearGradientBrush>
-                    <GradientStop Color="#7be9f6" Offset="0.0"/>
-                    <GradientStop Color="#f083d8" Offset="1"/>
+                    <GradientStop Color="#28313B" Offset="0.0"/>
+                    <GradientStop Color="#485461" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
             <Image Source="Images/logo_savt.png" Margin="98,-54,156,282"/>
@@ -26,6 +26,7 @@
         </Border>
         <Label Content="Registrar Contrato"
                    FontSize="28"
+                   Foreground="White"
                    FontStyle="Italic"
                    FontFamily="cURSIVE" Margin="53,160,317,297"
                    FontWeight="Light" RenderTransformOrigin="0.549,0.535"/>
@@ -53,18 +54,22 @@
         <Label Content="Fecha de creacion: "
                Margin="80,208,388,264"
                FontSize="15"
-               FontWeight="Light"/>
+               FontWeight="Light"
+               Foreground="White"/>
         <Label Content="Fecha de término: "
                Margin="80,241,401,231"
                FontSize="15"
-               FontWeight="Light"/>
+               FontWeight="Light"
+               Foreground="White"/>
         <Label Content="Modalidad:" Margin="80,280,438,188"
                FontSize="15"
                 RenderTransformOrigin="0.368,0.531"
-               FontWeight="Light"/>
+               FontWeight="Light"
+               Foreground="White"/>
         <Label Content="Observaciones:" Margin="80,312,406,156"
                FontSize="15"
-               FontWeight="Light"/>
+               FontWeight="Light"
+               Foreground="White"/>
         <TextBox Text=""
                  Background="White" Margin="185,280,255,188"/>
         <TextBox Text=""

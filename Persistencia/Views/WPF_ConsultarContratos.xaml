@@ -13,21 +13,33 @@
     <Border CornerRadius="5" RenderTransformOrigin="0.482,0.606">
         <Border.Background>
             <LinearGradientBrush>
-                <GradientStop Color="#7be9f6" Offset="0.0"/>
-                <GradientStop Color="#f083d8" Offset="1"/>
+                <GradientStop Color="#28313B" Offset="0.0"/>
+                <GradientStop Color="#485461" Offset="1"/>
             </LinearGradientBrush>
         </Border.Background>
         <Grid>
             <Image Source="Images/logo_savt.png" Margin="123,10,121,257"/>
             <Image Source="Images/flecha.png" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="27" Margin="24,187,0,0"/>
-            <Label Content="Numero de contrato: " HorizontalAlignment="Left" Margin="56,187,0,0" VerticalAlignment="Top" Width="122"/>
+            <Label Content="Numero de contrato: " HorizontalAlignment="Left" Margin="56,187,0,0" VerticalAlignment="Top" Width="122" Foreground="White"/>
             <Label Content="Consultar Contrato"
+                   Foreground="White"
                    FontSize="28"
                    FontStyle="Normal"
                    FontFamily="cURSIVE"
                    FontWeight="Light" Margin="123,133,137,218"/>
             <TextBox x:Name="txtNumContrato" HorizontalAlignment="Left" Height="23" Margin="196,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157"
-                     Background="White"/>
+                     Background="White"
+                     />
+            <DataGrid HorizontalAlignment="Left" Height="106" Margin="56,242,0,0" VerticalAlignment="Top" Width="297"
+                      Background="White"/>
+            <Button x:Name="btn_atras" Content="ATRAS" HorizontalAlignment="Left" Margin="384,301,0,0" VerticalAlignment="Top" Width="90" Height="38"
+                Background="#35759E"
+                FontWeight="Light" Click="Btn_atras_Click" 
+                />
+            <Button x:Name="btn_consultar" Content="CONSULTAR" HorizontalAlignment="Left" Margin="384,242,0,0" VerticalAlignment="Top" Width="90" Height="38"
+                Background="#35759E"
+                FontWeight="Light" 
+                />
 
         </Grid>
 

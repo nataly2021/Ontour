@@ -25,8 +25,8 @@
                 <Border CornerRadius="10" Grid.RowSpan="3">
                     <Border.Background>
                         <LinearGradientBrush>
-                            <GradientStop Color="#7be9f6" Offset="0.0"/>
-                            <GradientStop Color="#f083d8" Offset="1"/>
+                            <GradientStop Color="#28313B" Offset="0.0"/>
+                            <GradientStop Color="#485461" Offset="1"/>
                         </LinearGradientBrush>
                     </Border.Background>
                 </Border>
@@ -39,7 +39,7 @@
                            FontWeight="Light"
                            FontFamily="helvetica"
                            FontSize="22"
-                           Foreground="Black"
+                           Foreground="White"
                            HorizontalAlignment="Center" Margin="131,0,130,0"/>
                 </StackPanel>
 
@@ -54,7 +54,7 @@
                          FontFamily="Helvetica"
                          FontSize="20"
                          HorizontalAlignment="Center"
-                         Foreground="Black"
+                         Foreground="White"
                          Background="Transparent"
                          BorderThickness="0"
                          Width="235"
@@ -83,7 +83,7 @@
                          adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"
                          FontSize="20"
                          HorizontalAlignment="Center"
-                         Foreground="Black"
+                         Foreground="White"
                          Background="Transparent"
                          BorderThickness="0"
                          Width="235"
@@ -109,7 +109,8 @@
                     <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
                         <Button x:Name="btnEntrar" Width="100" Height="40" Content="ENTRAR" Margin="130,0,0,0"
                                 Click="OnClick"
-                                Foreground="Black"/>
+                                Foreground="White"
+                                BorderThickness="2"/>
                     </StackPanel>
                 </StackPanel>
 

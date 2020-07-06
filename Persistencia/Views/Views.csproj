@@ -302,9 +302,6 @@
     <Resource Include="Images\mano.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\flecha.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\upload_file.png" />
   </ItemGroup>
   <ItemGroup>
@@ -312,6 +309,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\cerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\flecha.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
