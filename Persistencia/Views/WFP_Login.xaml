@@ -31,32 +31,35 @@
                     </Border.Background>
                 </Border>
 
-                <StackPanel VerticalAlignment="Top" Margin="0,10,0,0">
-                    <Image Source="images/login.png" Width="140"/>
+                <StackPanel VerticalAlignment="Top" Margin="0,67,0,0">
+                    <Image Source="images/logo_savt.png" Height="85" Margin="70,0,70,0"/>
                     <TextBlock Text="Iniciar Sesion"
+                               
                           
                            FontWeight="Light"
                            FontFamily="helvetica"
                            FontSize="22"
-                           Foreground="White"
-                           HorizontalAlignment="Center"/>
+                           Foreground="Black"
+                           HorizontalAlignment="Center" Margin="131,0,130,0"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="2">
                     <StackPanel Orientation="Horizontal">
                         <TextBox 
                          adorners:Watermark.Text="Usuario"
+                            
                          x:Name="Txtusuario"
                          adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"
                          FontWeight="Light"                        
                          FontFamily="Helvetica"
                          FontSize="20"
                          HorizontalAlignment="Center"
-                         Foreground="White"
+                         Foreground="Black"
                          Background="Transparent"
                          BorderThickness="0"
                          Width="235"
                          HorizontalContentAlignment="Left"
+                         
                          Opacity="0.5"
                          Height="25"
                          Margin="63,0,0,0"/>
@@ -76,11 +79,11 @@
                         <PasswordBox FontFamily="Helvetica"
                          FontWeight="Light"
                          x:Name="txtpassword"
-                         adorners:Watermark.Text="Contraseña.." 
+                         adorners:Watermark.Text="Contraseña" 
                          adorners:Watermark.VisibleWhen="EmptyAndNotKeyboardFocused"
                          FontSize="20"
                          HorizontalAlignment="Center"
-                         Foreground="White"
+                         Foreground="Black"
                          Background="Transparent"
                          BorderThickness="0"
                          Width="235"
@@ -105,11 +108,12 @@
 
                     <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
                         <Button x:Name="btnEntrar" Width="100" Height="40" Content="ENTRAR" Margin="130,0,0,0"
-                                Click="OnClick"/>
+                                Click="OnClick"
+                                Foreground="Black"/>
                     </StackPanel>
                 </StackPanel>
 
             </Grid>
         </Grid>
     </UserControl>
-    </Window>
+</Window>

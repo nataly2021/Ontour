@@ -52,10 +52,10 @@ namespace Views
             this.Close();
         }
 
-        private void Btn_subir_doc_Click(object sender, RoutedEventArgs e)
+       
+
+        private void Btn_cerrar_Click(object sender, RoutedEventArgs e)
         {
-            WPF_SubirDocumento window = new WPF_SubirDocumento();
-            window.Show();
             this.Close();
         }
     }

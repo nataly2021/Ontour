@@ -177,6 +177,9 @@
     <Compile Include="WPF_AgregarSeguro.xaml.cs">
       <DependentUpon>WPF_AgregarSeguro.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WPF_ConsultarContratos.xaml.cs">
+      <DependentUpon>WPF_ConsultarContratos.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WPF_ConsultarMonto.xaml.cs">
       <DependentUpon>WPF_ConsultarMonto.xaml</DependentUpon>
     </Compile>
@@ -189,9 +192,6 @@
     <Compile Include="WPF_RegistrarContrato.xaml.cs">
       <DependentUpon>WPF_RegistrarContrato.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF_SubirDocumento.xaml.cs">
-      <DependentUpon>WPF_SubirDocumento.xaml</DependentUpon>
-    </Compile>
     <Page Include="Source\Boton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -201,6 +201,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WPF_AgregarSeguro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF_ConsultarContratos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -217,10 +221,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WPF_RegistrarContrato.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WPF_SubirDocumento.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -309,6 +309,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\monto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\cerrar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

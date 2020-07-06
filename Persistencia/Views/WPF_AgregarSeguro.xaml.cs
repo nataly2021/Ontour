@@ -28,7 +28,7 @@ namespace Views
             InitializeComponent();
         }
 
-        private  void RegistrarSeguro()
+        private void RegistrarSeguro()
         {
             try
             {

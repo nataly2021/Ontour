@@ -35,5 +35,13 @@ namespace Views
             window.Show();
             this.Close();
         }
+
+        private void Btn_consultar_Click(object sender, RoutedEventArgs e)
+        {
+            WPF_ConsultarContratos cc = new WPF_ConsultarContratos();
+            cc.Show();
+            this.Close();
+
+        }
     }
 }

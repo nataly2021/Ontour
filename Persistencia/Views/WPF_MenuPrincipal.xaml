@@ -27,7 +27,7 @@
         <Button x:Name="btn_reg_cliente"
                  
                 HorizontalAlignment="Left" 
-                Margin="31,130,0,0" 
+                Margin="80,120,0,0" 
                 VerticalAlignment="Top" 
                 Width="140" 
                 Height="120" Click="Btn_reg_cliente_Click"
@@ -40,7 +40,7 @@
         <Button x:Name="btn_reg_contrato"
             
             HorizontalAlignment="Left" 
-            Margin="229,130,0,0" 
+            Margin="378,130,0,0" 
             VerticalAlignment="Top" 
             Width="140" 
             Height="120" Click="Btn_reg_contrato_Click"
@@ -54,7 +54,7 @@
         <Button x:Name="btn_agr_seg"
            
             HorizontalAlignment="Left" 
-            Margin="121,294,0,0" 
+            Margin="80,288,0,0" 
             VerticalAlignment="Top" 
             Width="140" 
             Height="120" Click="Btn_agr_seg_Click">
@@ -65,23 +65,10 @@
             </StackPanel>
 
         </Button>
-        <Button x:Name="btn_subir_doc"
-            
-            HorizontalAlignment="Left" 
-            Margin="332,294,0,0" 
-            VerticalAlignment="Top" 
-            Width="140" 
-            Height="120" Click="Btn_subir_doc_Click">
-            <StackPanel>
-                <Image Source="Images/subir_doc.png"
-                       Stretch="Uniform"
-                       Height="104" Width="103"/>
-            </StackPanel>
-        </Button>
         <Button x:Name="btn_consultar_monto"
             
             HorizontalAlignment="Left" 
-            Margin="420,130,0,0" 
+            Margin="378,288,0,0" 
             VerticalAlignment="Top" 
             Width="140" 
             Height="120" Click="Btn_consultar_monto_Click">
@@ -92,32 +79,39 @@
             </StackPanel>
 
         </Button>
-        <Label Content="Registrar Cliente" HorizontalAlignment="Left" Margin="44,255,0,0" VerticalAlignment="Top" Width="140"
+        <Button x:Name="btn_cerrar"
+                 
+                HorizontalAlignment="Left" 
+                Margin="532,10,0,0" 
+                VerticalAlignment="Top" 
+                Width="58" 
+                Height="60" Click="Btn_cerrar_Click"
+                >
+            <StackPanel Orientation="Horizontal">
+                <Image Source="Images/cerrar.png" Height="45" Width="44"/>
+            </StackPanel>
+        </Button>
+        <Label Content="Registrar Cliente" HorizontalAlignment="Left" Margin="94,240,0,0" VerticalAlignment="Top" Width="113"
                FontFamily="Helvetica"
                FontStyle="Normal"
                FontSize="15"
                FontWeight="Light"/>
-        <Label Content="Registrar Contrato" HorizontalAlignment="Left" Margin="241,255,0,0" VerticalAlignment="Top" Width="128"
+        <Label Content="Contratos" HorizontalAlignment="Left" Margin="409,250,0,0" VerticalAlignment="Top" Width="73"
                 FontFamily="Cursive"
                 FontStyle="Normal"
                 FontSize="15"
                FontWeight="Light"/>
-        <Label Content="Agregar Seguro" HorizontalAlignment="Left" Margin="138,419,0,0" VerticalAlignment="Top" Width="123"
+        <Label Content="Agregar Seguro" HorizontalAlignment="Left" Margin="94,413,0,0" VerticalAlignment="Top" Width="113"
                 FontFamily="Cursive"
                 FontStyle="Normal"
                 FontSize="15"
                 FontWeight="Light"/>
-        <Label Content="Consultar Monto" HorizontalAlignment="Left" Margin="420,255,0,0" VerticalAlignment="Top" Width="151"
+        <Label Content="Consultar Monto" HorizontalAlignment="Left" Margin="389,413,0,0" VerticalAlignment="Top" Width="120"
                 FontFamily="Cursive"
                 FontStyle="Normal"
                 FontSize="15"
                FontWeight="Light"
                FontStretch="Condensed"/>
-        <Label Content="Subir Documento" HorizontalAlignment="Left" Margin="341,419,0,0" VerticalAlignment="Top" Width="151"
-                FontFamily="Cursive"
-                FontStyle="Normal"
-                FontSize="15"
-                FontWeight="Light"/>
         <Image Source="Images/logo_savt.png" Margin="171,-42,185,334"/>
 
     </Grid>

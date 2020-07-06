@@ -27,48 +27,52 @@
         <Label Content="Registrar Contrato"
                    FontSize="28"
                    FontStyle="Italic"
-                   FontFamily="cURSIVE" Margin="146,160,156,297"
+                   FontFamily="cURSIVE" Margin="53,160,317,297"
                    FontWeight="Light" RenderTransformOrigin="0.549,0.535"/>
-        <Button x:Name="btn_aceptar" Content="ACEPTAR" HorizontalAlignment="Left" Margin="482,354,0,0" VerticalAlignment="Top" Width="95" Height="40"
+        <Button x:Name="btn_aceptar" Content="ACEPTAR" HorizontalAlignment="Left" Margin="408,349,0,0" VerticalAlignment="Top" Width="95" Height="40"
                 Background="#35759E"
                 FontWeight="Light" Click="Btn_aceptar_Click" 
                 />
-        <Button x:Name="btn_atras" Content="ATRAS" HorizontalAlignment="Left" Margin="482,413,0,0" VerticalAlignment="Top" Width="95" Height="41"
+        <Button x:Name="btn_atras" Content="ATRAS" HorizontalAlignment="Left" Margin="408,411,0,0" VerticalAlignment="Top" Width="95" Height="41"
                 Background="#35759E"
                 FontWeight="Light" Click="Btn_atras_Click" 
                 />
-        <DatePicker Margin="302,208,170,264"
+        <Button x:Name="btn_consultar" Content="CONSULTAR CONTRATO" HorizontalAlignment="Left" Margin="408,210,0,0" VerticalAlignment="Top" Width="165" Height="96"
+                Background="#35759E"
+                FontWeight="Light" Click="Btn_consultar_Click" 
+                />
+        <DatePicker Margin="217,210,255,262"
                     Background="Wheat"
                     FontStyle="Normal"
                     FontWeight="Bold"
                     />
-        <DatePicker Margin="302,241,170,231"
+        <DatePicker Margin="217,244,255,228"
                     Background="Wheat"
                     FontStyle="Italic"
                     FontWeight="bold"/>
         <Label Content="Fecha de creacion: "
-               Margin="146,208,317,264"
+               Margin="80,208,388,264"
                FontSize="15"
                FontWeight="Light"/>
         <Label Content="Fecha de término: "
-               Margin="146,241,317,231"
+               Margin="80,241,401,231"
                FontSize="15"
                FontWeight="Light"/>
-        <Label Content="Modalidad:" Margin="146,274,359,194"
+        <Label Content="Modalidad:" Margin="80,280,438,188"
                FontSize="15"
                 RenderTransformOrigin="0.368,0.531"
                FontWeight="Light"/>
-        <Label Content="Observaciones:" Margin="146,317,340,151"
+        <Label Content="Observaciones:" Margin="80,312,406,156"
                FontSize="15"
                FontWeight="Light"/>
         <TextBox Text=""
-                 Background="White" Margin="284,274,156,194"/>
+                 Background="White" Margin="185,280,255,188"/>
         <TextBox Text=""
-                 Background="White" Margin="146,354,156,33"/>
-        <Image Source="Images/flecha.png" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="27" Margin="119,210,0,0"/>
-        <Image Source="Images/flecha.png" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="27" Margin="119,243,0,0"/>
-        <Image Source="Images/flecha.png" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="27" Margin="119,280,0,0"/>
-        <Image Source="Images/flecha.png" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="27" Margin="119,317,0,0"/>
+                 Background="White" Margin="80,349,222,38"/>
+        <Image Source="Images/flecha.png" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="27" Margin="53,210,0,0"/>
+        <Image Source="Images/flecha.png" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="27" Margin="53,243,0,0"/>
+        <Image Source="Images/flecha.png" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="27" Margin="53,280,0,0"/>
+        <Image Source="Images/flecha.png" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="27" Margin="53,317,0,0"/>
 
     </Grid>
 </Window>
