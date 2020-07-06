@@ -110,7 +110,8 @@
                         <Button x:Name="btnEntrar" Width="100" Height="40" Content="ENTRAR" Margin="130,0,0,0"
                                 Click="OnClick"
                                 Foreground="White"
-                                BorderThickness="2"/>
+                                BorderThickness="2"
+                                Background="#35759E"/>
                     </StackPanel>
                 </StackPanel>
 
