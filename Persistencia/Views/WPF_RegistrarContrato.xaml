@@ -30,11 +30,11 @@
                    FontStyle="Italic"
                    FontFamily="cURSIVE" Margin="53,160,317,297"
                    FontWeight="Light" RenderTransformOrigin="0.549,0.535"/>
-        <Button x:Name="btn_aceptar" Content="ACEPTAR" HorizontalAlignment="Left" Margin="408,349,0,0" VerticalAlignment="Top" Width="95" Height="40"
+        <Button x:Name="btn_aceptar" Content="ACEPTAR" HorizontalAlignment="Left" Margin="392,399,0,0" VerticalAlignment="Top" Width="95" Height="40"
                 Background="#35759E"
                 FontWeight="Light" Click="Btn_aceptar_Click" 
                 />
-        <Button x:Name="btn_atras" Content="ATRAS" HorizontalAlignment="Left" Margin="408,411,0,0" VerticalAlignment="Top" Width="95" Height="41"
+        <Button x:Name="btn_atras" Content="ATRAS" HorizontalAlignment="Left" Margin="392,449,0,0" VerticalAlignment="Top" Width="95" Height="41"
                 Background="#35759E"
                 FontWeight="Light" Click="Btn_atras_Click" 
                 />
@@ -42,42 +42,57 @@
                 Background="#35759E"
                 FontWeight="Light" Click="Btn_consultar_Click" 
                 />
-        <DatePicker Margin="217,210,255,262"
+        <DatePicker Margin="217,253,255,219"
                     Background="Wheat"
                     FontStyle="Normal"
                     FontWeight="Bold"
                     />
-        <DatePicker Margin="217,244,255,228"
+        <DatePicker Margin="217,291,255,181"
                     Background="Wheat"
                     FontStyle="Italic"
                     FontWeight="bold"/>
+        <Label Content="Rut Cliente: "
+               Margin="85,210,406,262"
+               FontSize="15"
+               FontWeight="Light"
+               Foreground="White"/>
         <Label Content="Fecha de creacion: "
-               Margin="80,208,388,264"
+               Margin="85,253,392,219"
                FontSize="15"
                FontWeight="Light"
                Foreground="White"/>
         <Label Content="Fecha de término: "
-               Margin="80,241,401,231"
+               Margin="85,288,396,184"
                FontSize="15"
                FontWeight="Light"
                Foreground="White"/>
-        <Label Content="Modalidad:" Margin="80,280,438,188"
+        <Label Content="Modalidad:" Margin="85,332,433,136"
                FontSize="15"
                 RenderTransformOrigin="0.368,0.531"
                FontWeight="Light"
                Foreground="White"/>
-        <Label Content="Observaciones:" Margin="80,312,406,156"
+        <Label Content="Observaciones:" Margin="80,362,406,106"
                FontSize="15"
                FontWeight="Light"
                Foreground="White"/>
+        <TextBox x:Name="txtModalidad" Text=""
+                 Background="White" Margin="198,336,255,136"/>
+        <TextBox x:Name="txtRut" Text=""
+                 Background="White" Margin="198,210,255,262"/>
         <TextBox Text=""
-                 Background="White" Margin="185,280,255,188"/>
-        <TextBox Text=""
-                 Background="White" Margin="80,349,222,38"/>
+                 Background="White" Margin="80,399,255,10"/>
+        <Image Source="Images/flecha.png" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="27" Margin="53,255,0,0"/>
+        <Image Source="Images/flecha.png" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="27" Margin="53,291,0,0"/>
+        <Image Source="Images/flecha.png" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="27" Margin="53,331,0,0"/>
+        <Image Source="Images/flecha.png" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="27" Margin="53,363,0,0"/>
         <Image Source="Images/flecha.png" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="27" Margin="53,210,0,0"/>
-        <Image Source="Images/flecha.png" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="27" Margin="53,243,0,0"/>
-        <Image Source="Images/flecha.png" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="27" Margin="53,280,0,0"/>
-        <Image Source="Images/flecha.png" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="27" Margin="53,317,0,0"/>
-
+        <Image Source="Images/logged in.png" HorizontalAlignment="Left" Height="77" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.697,0.407" Margin="10,5,0,0"/>
+        <Label Content="Admin" HorizontalAlignment="Left" Margin="21,82,0,0" VerticalAlignment="Top" Width="53"
+                FontFamily="Cursive"
+                FontStyle="Normal"
+                FontSize="15"
+               FontWeight="Light"
+               FontStretch="Condensed"
+               Foreground="White"/>
     </Grid>
 </Window>

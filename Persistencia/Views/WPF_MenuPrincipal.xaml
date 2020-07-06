@@ -117,6 +117,13 @@
                FontStretch="Condensed"
                Foreground="White"/>
         <Image Source="Images/logo_savt.png" Margin="171,-42,185,334"/>
-
+        <Image Source="Images/logged in.png" HorizontalAlignment="Left" Height="77" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.697,0.407" Margin="10,5,0,0"/>
+        <Label Content="Admin" HorizontalAlignment="Left" Margin="21,82,0,0" VerticalAlignment="Top" Width="53"
+                FontFamily="Cursive"
+                FontStyle="Normal"
+                FontSize="15"
+               FontWeight="Light"
+               FontStretch="Condensed"
+               Foreground="White"/>
     </Grid>
 </Window>

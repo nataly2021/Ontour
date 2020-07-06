@@ -313,6 +313,9 @@
   <ItemGroup>
     <Resource Include="Images\flecha.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logged in.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

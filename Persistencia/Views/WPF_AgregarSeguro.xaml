@@ -30,27 +30,41 @@
                FontSize="29" Margin="165.561,160,208,268"
                FontWeight="Light" Grid.Column="1"
                Foreground="White"/>
-        <Label Content="Nombre Seguro: " Margin="152.561,232,332,235"
+        <Label Content="Nombre Seguro: " Margin="153,289,332,178"
                FontWeight="Light"
                FontSize="15" Grid.Column="1"
                Foreground="White"/>
-        <Label Content="Monto Seguro: " Margin="152.561,297,332,170"
+        <Label Content="Monto Seguro: " Margin="153,360,332,107"
                FontWeight="Light"
                FontSize="15" Grid.Column="1"
                Foreground="White"/>
-        <TextBox Name="txtSeguroName" Background="White" Margin="270.561,232,143,238" Grid.Column="1"/>
-        <TextBox Name="txtSeguroMonto" Background="White" Margin="270.561,297,143,173" Grid.Column="1"/>
+        <Label Content="ID Seguro: " Margin="153,229,332,238"
+               FontWeight="Light"
+               FontSize="15" Grid.Column="1"
+               Foreground="White"/>
+        <TextBox Name="txtSeguroName" Background="White" Margin="271,292,142,178" Grid.Column="1"/>
+        <TextBox Name="txtSeguroId" Background="White" Margin="271,229,142,241" Grid.Column="1"/>
+        <TextBox Name="txtSeguroMonto" Background="White" Margin="271,363,142,107" Grid.Column="1"/>
         <Button x:Name="btn_agregar" Content="Agregar"
                 Background="#35759E"
                 FontSize="15"
                 FontFamily="Helvetica"
-                FontWeight="Light" Grid.Column="1" Margin="137,366,308,82" Click="Btn_agregar_Click"/>
+                FontWeight="Light" Grid.Column="1" Margin="136,417,309,31" Click="Btn_agregar_Click"/>
         <Button x:Name="btn_atras" Content="Atras"
                 Background="#35759E"
                 FontSize="15"
                 FontFamily="Helvetica"
-                FontWeight="Light" Grid.Column="1" Margin="331,366,114,82" Click="Btn_atras_Click"/>
-        <Image Source="Images/flecha.png" HorizontalAlignment="Left" Height="27" VerticalAlignment="Top" Width="33" Margin="120,235,0,0" Grid.Column="1" RenderTransformOrigin="0.704,0.646"/>
-        <Image Source="Images/flecha.png" HorizontalAlignment="Left" Height="27" VerticalAlignment="Top" Width="33" Margin="120,300,0,0" Grid.Column="1" RenderTransformOrigin="0.704,0.646"/>
+                FontWeight="Light" Grid.Column="1" Margin="326,417,119,31" Click="Btn_atras_Click"/>
+        <Image Source="Images/flecha.png" HorizontalAlignment="Left" Height="27" VerticalAlignment="Top" Width="33" Margin="120,292,0,0" Grid.Column="1" RenderTransformOrigin="0.704,0.646"/>
+        <Image Source="Images/flecha.png" HorizontalAlignment="Left" Height="27" VerticalAlignment="Top" Width="33" Margin="120,360,0,0" Grid.Column="1" RenderTransformOrigin="0.697,0.407"/>
+        <Image Source="Images/flecha.png" HorizontalAlignment="Left" Height="27" VerticalAlignment="Top" Width="33" Margin="120,232,0,0" Grid.Column="1" RenderTransformOrigin="0.697,0.407"/>
+        <Image Source="Images/logged in.png" HorizontalAlignment="Left" Height="77" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.697,0.407" Margin="10,5,0,0" Grid.Column="1"/>
+        <Label Content="Admin" HorizontalAlignment="Left" Margin="21,82,0,0" VerticalAlignment="Top" Width="53"
+                FontFamily="Cursive"
+                FontStyle="Normal"
+                FontSize="15"
+               FontWeight="Light"
+               FontStretch="Condensed"
+               Foreground="White" Grid.Column="1"/>
     </Grid>
 </Window>
