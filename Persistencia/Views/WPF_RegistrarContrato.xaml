@@ -42,12 +42,12 @@
                 Background="#35759E"
                 FontWeight="Light" Click="Btn_consultar_Click" 
                 />
-        <DatePicker Margin="217,253,255,219"
+        <DatePicker Name="DTfechacreacion" Margin="217,253,255,219"
                     Background="Wheat"
                     FontStyle="Normal"
                     FontWeight="Bold"
                     />
-        <DatePicker Margin="217,291,255,181"
+        <DatePicker Name="DTfechatermino" Margin="217,291,255,181"
                     Background="Wheat"
                     FontStyle="Italic"
                     FontWeight="bold"/>
@@ -79,7 +79,8 @@
                  Background="White" Margin="198,336,255,136"/>
         <TextBox x:Name="txtRut" Text=""
                  Background="White" Margin="198,210,255,262"/>
-        <TextBox Text=""
+        <TextBox x:Name="txtObservaciones"
+                 Text=""
                  Background="White" Margin="80,399,255,10"/>
         <Image Source="Images/flecha.png" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="27" Margin="53,255,0,0"/>
         <Image Source="Images/flecha.png" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="27" Margin="53,291,0,0"/>

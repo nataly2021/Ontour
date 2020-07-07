@@ -32,14 +32,15 @@ namespace Views
         {
             try
             {
-                //int id = int.Parse(txtid_seguro.Text);
+                int id = int.Parse(txtSeguroId.Text);
                 string nombre = txtSeguroName.Text;
                 int monto = int.Parse(txtSeguroMonto.Text);
+
                 SEGURO seguro = new SEGURO
                 {
-                    //ID = id
-                    Nombre_Seguro = nombre,
-                    Monto_Seguro = monto
+                    ID_Seguro = id,
+                   Nombre_Seguro = nombre,
+                   Monto_Seguro = monto,
                 };
                 Se.AddEntity(seguro);
                 MessageBox.Show("Exito:", "Datos del Seguro registrados correctamente!!!");

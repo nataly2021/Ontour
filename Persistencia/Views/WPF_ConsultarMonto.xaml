@@ -23,11 +23,11 @@
                     <GradientStop Color="#485461" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
-            <Image Source="Images/logo_savt.png" Margin="98,-54,156,282"/>
+            <Image Source="Images/logo_savt.png" Margin="182,-12,183,371"/>
         </Border>
         <Label Content="Consultar Monto"
                FontFamily="Helvetica"
-               FontSize="29" Margin="194,167,180,272"
+               FontSize="29" Margin="182,133,192,306"
                FontWeight="Light" Grid.Column="1"
                Foreground="White"/>
         <Button x:Name="btn_consultar"
@@ -35,7 +35,7 @@
                 Background="#35759E"
                 FontSize="15"
                 FontFamily="Helvetica"
-                FontWeight="Light" Grid.Column="1" Margin="228,304,261,151" Click="Btn_consultar_Click" 
+                FontWeight="Light" Grid.Column="1" Margin="238,250,251,205" Click="Btn_consultar_Click" 
                 >
         </Button>
         <Button x:Name="btn_atras"
@@ -43,25 +43,35 @@
                 Background="#35759E"
                 FontSize="15"
                 FontFamily="Helvetica"
-                FontWeight="Light" Grid.Column="1" Margin="228,421,261,34" Click="Btn_atras_Click" 
+                FontWeight="Light" Grid.Column="1" Margin="462,432,27,23" Click="Btn_atras_Click" 
                 >
         </Button>
-        <Image Source="Images/monto.png" HorizontalAlignment="Left" Height="99" VerticalAlignment="Top" Width="126" Margin="92,152,0,0" Grid.Column="1"/>
-        <ComboBox x:Name="cmbNROAbono" Background="White"  Margin="272,252,146,216" Grid.Column="1"/>
-        <TextBox x:Name="txb_monto" Background="White" Margin="272,362,146,106" Grid.Column="1"/>
-        <Label Content="Número de abono" HorizontalAlignment="Left" Margin="137,256,0,0" VerticalAlignment="Top" Width="146"
+        <Image Source="Images/monto.png" HorizontalAlignment="Left" Height="99" VerticalAlignment="Top" Width="126" Margin="68,115,0,0" Grid.Column="1"/>
+        <ComboBox x:Name="cmbBuscar" Background="White"  Margin="287,199,131,269" Grid.Column="1"/>
+            <TextBox x:Name="txtnroAbono" Background="White"  Margin="298,205,131,269" Grid.Column="1"/>
+        <TextBox x:Name="txb_monto" Background="White" Margin="261,341,157,127" Grid.Column="1"/>
+        <Label Content="Número de abono" HorizontalAlignment="Left" Margin="136,199,0,0" VerticalAlignment="Top" Width="146"
                FontFamily="Helvetica"
                FontStyle="Normal"
                FontSize="15"
                FontWeight="Light" Grid.Column="1"
                Foreground="White"/>
-        <Label Content="Monto" HorizontalAlignment="Left" Margin="151,362,0,0" VerticalAlignment="Top" Width="67"
+        <Label Content="Monto" HorizontalAlignment="Left" Margin="136,341,0,0" VerticalAlignment="Top" Width="67"
                FontFamily="Helvetica"
                FontStyle="Normal"
                FontSize="15"
                FontWeight="Light" Grid.Column="1"
                Foreground="White"/>
-        <Image Source="Images/logged in.png" HorizontalAlignment="Left" Height="77" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.697,0.407" Margin="10,5,0,0" Grid.Column="1"/>
+        <Image Source="Images/logged in.png" HorizontalAlignment="Left" Height="77" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.697,0.407" Margin="10,5,0,0" Grid.Column="1">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.942"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
         <Label Content="Admin" HorizontalAlignment="Left" Margin="22,82,0,0" VerticalAlignment="Top" Width="53"
                 FontFamily="Cursive"
                 FontStyle="Normal"

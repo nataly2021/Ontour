@@ -28,45 +28,18 @@ namespace Views
             InitializeComponent();
         }
 
-        private  void CargarListadoAbonos()
-        {
-            try
-            {
-                List<ABONOS> abonos = Sa.GetEntities();
-                cmbNROAbono.ItemsSource = abonos;
-                cmbNROAbono.SelectedValuePath = "NRO Abono";
-                cmbNROAbono.DisplayMemberPath = "Monto";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error:", ex.Message);
-            }
-
-        }
-
-
-
-
-        //private  void BuscarDatosAbonos()
+        //private  void CargarListadoAbonos()
         //{
         //    try
         //    {
-        //       ABONOS abonos = Sa.GetEntity(txtNROAbono.Text);
-        //        if (abonos != null)
-        //        {
-        //            MessageBox.Show("Exito:", "Abono encontrado con exito");
-        //            cmbNROAbono.Text= abonos.Monto;
-
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Error:", "Debe ingresar un rut valido");
-        //        }
-
+        //        List<ABONOS> abonos = Sa.GetEntities();
+        //        cmbNROAbono.ItemsSource = abonos;
+        //        cmbNROAbono.SelectedValuePath = "NRO Abono";
+        //        cmbNROAbono.DisplayMemberPath = "Monto";
         //    }
         //    catch (Exception ex)
         //    {
-        //        MessageBox.Show ("Error:", "No se ha podido encontrar al cliente." + ex.Message);
+        //        MessageBox.Show("Error:", ex.Message);
         //    }
 
         //}
@@ -74,10 +47,37 @@ namespace Views
 
 
 
+        private  void BuscarDatosAbonos()
+        {
+            try
+            {
+               ABONOS abonos = Sa.GetEntity(txtnroAbono.Text);
+                if (abonos != null)
+                {
+                    MessageBox.Show("Exito:", "Abono encontrado con exito");
+                    //cmbBuscar.Text= abonos.Monto;
+
+                }
+                else
+                {
+                    MessageBox.Show("Error:", "Debe ingresar un rut valido");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show ("Error:", "No se ha podido encontrar al cliente." + ex.Message);
+            }
+
+        }
+
+
+
+
         private void Btn_consultar_Click(object sender, RoutedEventArgs e)
         {
             
-           // BuscarDatosAbonos();
+            BuscarDatosAbonos();
         }
 
         private void Btn_atras_Click(object sender, RoutedEventArgs e)

@@ -30,5 +30,7 @@ namespace Views
             rc.Show();
             this.Close();
         }
+
+
     }
 }
