@@ -29,19 +29,23 @@ namespace Servicios
             }
 
 
-
-
-
         }
+
 
         public override List<CLIENTE> GetEntities()
         {
             return em.CLIENTE.ToList<CLIENTE>();
         }
 
-        public override void DeleteEntity(object key)
+        public override List<CLIENTE> GetEntity()
         {
 
+            return em.CLIENTE.ToList<CLIENTE>();
+        }
+
+        public override void DeleteEntity(object key)
+        {
+            //Eliminar cliente por rut 
             CLIENTE cliente = GetEntity(key);
             if (cliente != null)
             {
@@ -57,19 +61,14 @@ namespace Servicios
 
         public override CLIENTE GetEntity(object key)
         {
-            //throw new NotImplementedException();
+            
             return em.CLIENTE.Where(a => a.Rut_Cliente == (string)key).FirstOrDefault<CLIENTE>();
         }
 
-        public override List<CLIENTE> GetEntity()
-        {
-            //throw new NotImplementedException();
-            return em.CLIENTE.ToList<CLIENTE>();
-        }
-
+       
         public override void UpdateEntity(CLIENTE entity)
         {
-            //throw new NotImplementedException();
+            //Actualizar Cliente por Rut de cliente
             CLIENTE cliente = GetEntity(entity.Rut_Cliente);
             if (cliente != null)
             {
