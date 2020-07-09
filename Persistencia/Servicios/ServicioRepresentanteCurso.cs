@@ -12,7 +12,6 @@ namespace Servicios
         public override void AddEntity(REPRESENTANTE_CURSO entity)
         {
 
-
             // Crear REPRESENTANTE_CURSO
             REPRESENTANTE_CURSO representantecurso = GetEntity(entity.RUT_Representante);
             if (representantecurso == null)
@@ -29,19 +28,23 @@ namespace Servicios
             }
 
 
-
-
-
-        }
+       }
 
         public override List<REPRESENTANTE_CURSO> GetEntities()
         {
             return em.REPRESENTANTE_CURSO.ToList<REPRESENTANTE_CURSO>();
         }
 
-        public override void DeleteEntity(object key)
+        public override List<REPRESENTANTE_CURSO> GetEntity()
         {
 
+            return em.REPRESENTANTE_CURSO.ToList<REPRESENTANTE_CURSO>();
+        }
+
+
+        public override void DeleteEntity(object key)
+        {
+            //Eliminar Representante de Curso
             REPRESENTANTE_CURSO representantecurso = GetEntity(key);
             if (representantecurso != null)
             {
@@ -61,15 +64,10 @@ namespace Servicios
             return em.REPRESENTANTE_CURSO.Where(a => a.RUT_Representante == (string)key).FirstOrDefault<REPRESENTANTE_CURSO>();
         }
 
-        public override List<REPRESENTANTE_CURSO> GetEntity()
-        {
-
-            return em.REPRESENTANTE_CURSO.ToList<REPRESENTANTE_CURSO>();
-        }
-
+  
         public override void UpdateEntity(REPRESENTANTE_CURSO entity)
         {
-
+            //Actualizar informacion de Representante de curso 
             REPRESENTANTE_CURSO representantecurso = GetEntity(entity.RUT_Representante);
             if (representantecurso != null)
             {

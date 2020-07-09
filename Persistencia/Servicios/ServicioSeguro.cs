@@ -29,9 +29,6 @@ namespace Servicios
             }
 
 
-
-
-
         }
 
         public override List<SEGURO> GetEntities()
@@ -39,9 +36,15 @@ namespace Servicios
             return em.SEGURO.ToList<SEGURO>();
         }
 
-        public override void DeleteEntity(object key)
+        public override List<SEGURO> GetEntity()
         {
 
+            return em.SEGURO.ToList<SEGURO>();
+        }
+
+        public override void DeleteEntity(object key)
+        {
+            //Eliminar Seguro
             SEGURO seguro = GetEntity(key);
             if (seguro != null)
             {
@@ -62,15 +65,10 @@ namespace Servicios
 
         }
 
-        public override List<SEGURO> GetEntity()
-        {
-
-            return em.SEGURO.ToList<SEGURO>();
-        }
 
         public override void UpdateEntity(SEGURO entity)
         {
-
+            //Actualizar Seguro
             SEGURO seguro = GetEntity(entity.ID_Seguro);
             if (seguro != null)
             {

@@ -11,11 +11,11 @@ namespace Servicios
     {
         public override void AddEntity(DETALLE_CONTRATO entity)
         {
-            //throw new NotImplementedException();
+           
             DETALLE_CONTRATO detalle_contrato = GetEntity(entity.CONTRATO_NRO_Contrato);
             if (detalle_contrato == null)
             {
-
+                //Agregar DEtalle de contrato
                 em.DETALLE_CONTRATO.Add(entity);
                 //Guardar Cambios
                 em.SaveChanges();
@@ -33,9 +33,15 @@ namespace Servicios
             return em.DETALLE_CONTRATO.ToList<DETALLE_CONTRATO>();
         }
 
-        public override void DeleteEntity(object key)
+        public override List<DETALLE_CONTRATO> GetEntity()
         {
 
+            return em.DETALLE_CONTRATO.ToList<DETALLE_CONTRATO>();
+        }
+
+        public override void DeleteEntity(object key)
+        {
+            // Eliminar Detalle de Abono 
             DETALLE_CONTRATO detalle_contrato = GetEntity(key);
             if (detalle_contrato != null)
             {
@@ -55,15 +61,11 @@ namespace Servicios
             return em.DETALLE_CONTRATO.Where(a => a.CONTRATO_NRO_Contrato == (int)key).FirstOrDefault<DETALLE_CONTRATO>();
         }
 
-        public override List<DETALLE_CONTRATO> GetEntity()
-        {
-
-            return em.DETALLE_CONTRATO.ToList<DETALLE_CONTRATO>();
-        }
+      
 
         public override void UpdateEntity(DETALLE_CONTRATO entity)
         {
-
+            //Actualizar detalle de contrato
             DETALLE_CONTRATO detalle_contrato = GetEntity(entity.CONTRATO_NRO_Contrato);
             if (detalle_contrato != null)
             {
