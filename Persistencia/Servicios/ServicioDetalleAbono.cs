@@ -11,7 +11,7 @@ namespace Servicios
     {
         public override void AddEntity(DETALLE_ABONO entity)
         {
-            //throw new NotImplementedException();
+            //Guardar detalle de abono
             DETALLE_ABONO detalle_abono = GetEntity(entity.ABONOS_Nro_Abono);
             if (detalle_abono == null)
             {
@@ -33,8 +33,15 @@ namespace Servicios
             return em.DETALLE_ABONO.ToList<DETALLE_ABONO>();
         }
 
+        public override List<DETALLE_ABONO> GetEntity()
+        {
+
+            return em.DETALLE_ABONO.ToList<DETALLE_ABONO>();
+        }
+
         public override void DeleteEntity(object key)
         {
+            // Eliminar detalle de abono 
 
             DETALLE_ABONO DETALLE_ABONO = GetEntity(key);
             if (DETALLE_ABONO != null)
@@ -55,15 +62,11 @@ namespace Servicios
             return em.DETALLE_ABONO.Where(a => a.ABONOS_Nro_Abono == (int)key).FirstOrDefault<DETALLE_ABONO>();
         }
 
-        public override List<DETALLE_ABONO> GetEntity()
-        {
-
-            return em.DETALLE_ABONO.ToList<DETALLE_ABONO>();
-        }
+       
 
         public override void UpdateEntity(DETALLE_ABONO entity)
         {
-
+            //Actualizar detalle de Abono
             DETALLE_ABONO detalle_abono = GetEntity(entity.ABONOS_Nro_Abono);
             if (detalle_abono != null)
             {

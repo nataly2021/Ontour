@@ -12,7 +12,6 @@ namespace Servicios
         public override void AddEntity(CONTRATO entity)
         {
 
-
             // CrearCONTRATO
             CONTRATO Contrato = GetEntity(entity.NRO_Contrato);
             if (Contrato == null)
@@ -29,19 +28,12 @@ namespace Servicios
             }
 
 
-
-
-
         }
 
-        public override List<CONTRATO> GetEntities()
-        {
-            return em.CONTRATO.ToList<CONTRATO>();
-        }
 
         public override void DeleteEntity(object key)
         {
-
+            //Eliminar Contrato por numero de contrato 
             CONTRATO Contrato = GetEntity(key);
             if (Contrato != null)
             {
@@ -61,6 +53,12 @@ namespace Servicios
             return em.CONTRATO.Where(a => a.NRO_Contrato == (int)key).FirstOrDefault<CONTRATO>();
         }
 
+
+        public override List<CONTRATO> GetEntities()
+        {
+            return em.CONTRATO.ToList<CONTRATO>();
+        }
+
         public override List<CONTRATO> GetEntity()
         {
 
@@ -69,7 +67,7 @@ namespace Servicios
 
         public override void UpdateEntity(CONTRATO entity)
         {
-
+            //Actualizar Contrato por numero de contrato
             CONTRATO Contrato = GetEntity(entity.NRO_Contrato);
             if (Contrato != null)
             {

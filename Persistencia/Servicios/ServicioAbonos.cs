@@ -11,9 +11,8 @@ namespace Servicios
     {
         public override void AddEntity(ABONOS entity)
         {
-
-
-            // CrearABONOS
+            
+            // Crear ABONOS
             ABONOS abonos= GetEntity(entity.Nro_Abono);
             if (abonos == null)
             {
@@ -29,15 +28,19 @@ namespace Servicios
             }
 
 
-
-
-
         }
 
         public override List<ABONOS> GetEntities()
         {
             return em.ABONOS.ToList<ABONOS>();
         }
+
+        public override List<ABONOS> GetEntity()
+        {
+
+            return em.ABONOS.ToList<ABONOS>();
+        }
+
 
         public override void DeleteEntity(object key)
         {
@@ -61,12 +64,7 @@ namespace Servicios
             return em.ABONOS.Where(a => a.Nro_Abono == (int)key).FirstOrDefault<ABONOS>();
         }
 
-        public override List<ABONOS> GetEntity()
-        {
-
-            return em.ABONOS.ToList<ABONOS>();
-        }
-
+    
         public override void UpdateEntity(ABONOS entity)
         {
 

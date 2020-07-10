@@ -12,7 +12,6 @@ namespace Servicios
         public override void AddEntity(PRODUCTOS entity)
         {
 
-
             // Crear PRODUCTOS
             PRODUCTOS productos = GetEntity(entity.ID_Producto);
             if (productos == null)
@@ -28,10 +27,6 @@ namespace Servicios
                 throw new ArgumentException("No se logro Registrar el productos");
             }
 
-
-
-
-
         }
 
         public override List<PRODUCTOS> GetEntities()
@@ -39,9 +34,15 @@ namespace Servicios
             return em.PRODUCTOS.ToList<PRODUCTOS>();
         }
 
-        public override void DeleteEntity(object key)
+        public override List<PRODUCTOS> GetEntity()
         {
 
+            return em.PRODUCTOS.ToList<PRODUCTOS>();
+        }
+
+        public override void DeleteEntity(object key)
+        {
+            //Eliminar producto
             PRODUCTOS productos = GetEntity(key);
             if (productos != null)
             {
@@ -61,14 +62,11 @@ namespace Servicios
             return em.PRODUCTOS.Where(a => a.ID_Producto == (string)key).FirstOrDefault<PRODUCTOS>();
         }
 
-        public override List<PRODUCTOS> GetEntity()
-        {
-
-            return em.PRODUCTOS.ToList<PRODUCTOS>();
-        }
+       
 
         public override void UpdateEntity(PRODUCTOS entity)
         {
+            //Actualizar producto 
 
             PRODUCTOS productos = GetEntity(entity.ID_Producto);
             if (productos != null)
@@ -76,8 +74,6 @@ namespace Servicios
                 productos.Nombre_Paquete = entity.Nombre_Paquete;
                 productos.Precio_Unitario = entity.Precio_Unitario;
                 productos.Detalle_Producto = entity.Detalle_Producto;
-
-
 
                 em.SaveChanges();
             }
