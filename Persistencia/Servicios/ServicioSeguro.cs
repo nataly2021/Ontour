@@ -25,7 +25,7 @@ namespace Servicios
             }
             else
             {
-                throw new ArgumentException("No se logro Registrar el seguro");
+                throw new ArgumentException("Seguro ya existe, No es posible grabar");
             }
 
 
@@ -58,7 +58,8 @@ namespace Servicios
         public override SEGURO GetEntity(object key)
         {
 
-            return em.SEGURO.Where(a => a.ID_Seguro == (int)key).FirstOrDefault<SEGURO>();
+            return em.SEGURO.Where(a => a.ID_Seguro == (decimal)key).FirstOrDefault<SEGURO>();
+
         }
 
         public override List<SEGURO> GetEntity()

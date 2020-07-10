@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Servicios;
+using Persistencia;
 
 namespace Views
 {
@@ -19,6 +21,8 @@ namespace Views
     /// </summary>
     public partial class WPF_RegistrarContrato : Window
     {
+        ServicioContrato sco = new ServicioContrato();
+
         public WPF_RegistrarContrato()
         {
             InitializeComponent();
@@ -43,5 +47,80 @@ namespace Views
             this.Close();
 
         }
+        private void RegistrarContrato()
+        {
+            try
+            {
+                string rutcontrato;
+                string modalidad;
+                string observaciones;
+                string fechadeCreacion;
+
+
+
+                if (txtNro.Text.Trim().Length > 0)
+                {
+                    rutcontrato = txtNro.Text;
+                }
+                else
+                {
+                    MessageBox.Show("Error:", "Debes ingresar un numero contrato válido");
+                    return;
+                }
+                if (DTfechacreacion.Text.Trim().Length>0)
+                {
+                    fechadeCreacion = DTfechacreacion.SelectedDate.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Error:", "Debes ingresar una fecha válida");
+                    return;
+                }
+                
+                if (txtModalidad.Text.Trim().Length > 0)
+                {
+                    modalidad = txtModalidad.Text;
+                }
+                else
+                {
+                    MessageBox.Show("Error:", "Debes ingresar modalidad de servicio");
+                    return;
+                }
+
+                if (txtObservaciones.Text.Trim().Length > 0)
+                {
+                    observaciones = txtObservaciones.Text;
+                }
+                else
+                {
+                    MessageBox.Show("Error:", "Debes ingresar Observaciones de Contrato");
+                    return;
+                }
+                CONTRATO c = new CONTRATO();
+                c.NRO_Contrato = Decimal.Parse(txtNro.Text);
+                c.Creacion = DTfechacreacion.SelectedDate ?? default(DateTime);
+                c.Termino = DTfechatermino.SelectedDate ?? default(DateTime);
+                c.Modalidad = txtModalidad.Text;
+                c.Observaciones = txtObservaciones.Text;
+
+               
+                sco.AddEntity(c);
+                MessageBox.Show("Exito:", "Contrato agregado correctamente!!!");
+
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show("Error:", ex.Message);
+            }
+
+        }
+
+        //private void TerminoCoantrato()
+        //{
+        //    CONTRATO c = new CONTRATO();
+
+        //    DTfechatermino = DateTime.Now();
+        //}
+
     }
 }

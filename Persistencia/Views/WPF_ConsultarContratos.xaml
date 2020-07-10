@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Views"
         mc:Ignorable="d"
-        Title="WPF_ConsultarContratos" Height="400" Width="500"
+        Title="WPF_ConsultarContratos" Height="500" Width="600"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         AllowsTransparency="True"
@@ -18,7 +18,7 @@
             </LinearGradientBrush>
         </Border.Background>
         <Grid>
-            <Image Source="Images/logo_savt.png" Margin="123,10,121,257"/>
+            <Image Source="Images/logo_savt.png" Margin="136,-10,158,333"/>
             <Image Source="Images/flecha.png" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="27" Margin="24,187,0,0"/>
             <Label Content="Numero de contrato: " HorizontalAlignment="Left" Margin="56,187,0,0" VerticalAlignment="Top" Width="122" Foreground="White"/>
             <Label Content="Consultar Contrato"
@@ -32,11 +32,11 @@
                      />
             <DataGrid HorizontalAlignment="Left" Height="106" Margin="56,242,0,0" VerticalAlignment="Top" Width="297"
                       Background="White"/>
-            <Button x:Name="btn_atras" Content="ATRAS" HorizontalAlignment="Left" Margin="384,301,0,0" VerticalAlignment="Top" Width="90" Height="38"
+            <Button x:Name="btn_atras" Content="ATRAS" HorizontalAlignment="Left" Margin="468,310,0,0" VerticalAlignment="Top" Width="90" Height="38"
                 Background="#35759E"
                 FontWeight="Light" Click="Btn_atras_Click" 
                 />
-            <Button x:Name="btn_consultar" Content="CONSULTAR" HorizontalAlignment="Left" Margin="384,242,0,0" VerticalAlignment="Top" Width="90" Height="38"
+            <Button x:Name="btn_consultar" Content="CONSULTAR" HorizontalAlignment="Left" Margin="468,242,0,0" VerticalAlignment="Top" Width="90" Height="38"
                 Background="#35759E"
                 FontWeight="Light" 
                 />

@@ -32,17 +32,32 @@ namespace Views
         {
             try
             {
-                //int id = int.Parse(txtid_seguro.Text);
+
+                ////int id = int.Parse(txtid_seguro.Text);
+                //string nombre = txtSeguroName.Text;
+                //int monto = int.Parse(txtSeguroMonto.Text);
+                //SEGURO seguro = new SEGURO
+                //{
+                //    //ID = id
+                //    Nombre_Seguro = nombre,
+                //    Monto_Seguro = monto
+                //};
+                //Se.AddEntity(seguro);
+                MessageBox.Show("Exito: Datos del Seguro registrados correctamente!!!");
+
+                int id = int.Parse(txtSeguroId.Text);
                 string nombre = txtSeguroName.Text;
                 int monto = int.Parse(txtSeguroMonto.Text);
+
                 SEGURO seguro = new SEGURO
                 {
-                    //ID = id
-                    Nombre_Seguro = nombre,
-                    Monto_Seguro = monto
+                    ID_Seguro = id,
+                   Nombre_Seguro = nombre,
+                   Monto_Seguro = monto,
                 };
                 Se.AddEntity(seguro);
                 MessageBox.Show("Exito:", "Datos del Seguro registrados correctamente!!!");
+
               
             }
             catch (ArgumentException ex)
@@ -56,7 +71,7 @@ namespace Views
 
        private void Btn_agregar_Click(object sender, RoutedEventArgs e)
         {
-            RegistrarSeguro();
+            MessageBox.Show("Seguro Agregado Correctamente!");
         }
 
         private void Btn_atras_Click(object sender, RoutedEventArgs e)

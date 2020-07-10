@@ -42,15 +42,16 @@
                 Background="#35759E"
                 FontWeight="Light" Click="Btn_consultar_Click" 
                 />
-        <DatePicker Margin="217,253,255,219"
+        <DatePicker Name="DTfechacreacion" Margin="217,253,255,219"
                     Background="Wheat"
                     FontStyle="Normal"
                     FontWeight="Bold"
                     />
-        <DatePicker Margin="217,291,255,181"
+        <DatePicker Name="DTfechatermino" Margin="217,291,255,181"
                     Background="Wheat"
                     FontStyle="Italic"
-                    FontWeight="bold"/>
+                    FontWeight="bold"
+                    />
         <Label Content="Rut Cliente: "
                Margin="85,210,406,262"
                FontSize="15"
@@ -66,7 +67,7 @@
                FontSize="15"
                FontWeight="Light"
                Foreground="White"/>
-        <Label Content="Modalidad:" Margin="85,332,433,136"
+        <Label Content="Tipo de Evento:" Margin="85,332,407,136"
                FontSize="15"
                 RenderTransformOrigin="0.368,0.531"
                FontWeight="Light"
@@ -77,9 +78,10 @@
                Foreground="White"/>
         <TextBox x:Name="txtModalidad" Text=""
                  Background="White" Margin="198,336,255,136"/>
-        <TextBox x:Name="txtRut" Text=""
+        <TextBox x:Name="txtNro" Text=""
                  Background="White" Margin="198,210,255,262"/>
-        <TextBox Text=""
+        <TextBox x:Name="txtObservaciones"
+                 Text=""
                  Background="White" Margin="80,399,255,10"/>
         <Image Source="Images/flecha.png" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="27" Margin="53,255,0,0"/>
         <Image Source="Images/flecha.png" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="27" Margin="53,291,0,0"/>

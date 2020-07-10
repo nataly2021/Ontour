@@ -22,27 +22,71 @@ namespace Views
     public partial class WPF_ConsultarMonto : Window
     {
         ServicioAbonos Sa = new ServicioAbonos();
+        ServicioDetalleContrato dc = new ServicioDetalleContrato();
 
         public WPF_ConsultarMonto()
         {
             InitializeComponent();
         }
 
-        private  void CargarListadoAbonos()
-        {
-            try
-            {
-                List<ABONOS> abonos = Sa.GetEntities();
-                cmbNROAbono.ItemsSource = abonos;
-                cmbNROAbono.SelectedValuePath = "NRO Abono";
-                cmbNROAbono.DisplayMemberPath = "Monto";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error:", ex.Message);
-            }
 
-        }
+        //private  void CargarListadoAbonos()
+        //{
+        //    try
+        //    {
+        //        List<ABONOS> ab = Sa.GetEntities();
+        //        cmbAbono.ItemsSource = ab;
+        //        cmbAbono.SelectedValuePath = "NRO Abono";
+        //        cmbAbono.DisplayMemberPath = "Monto";
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Error:", ex.Message);
+        //    }
+
+        //}
+
+        //private void CargarDetalleContrato()
+        //{
+        //    try
+        //    {
+        //        List<DETALLE_CONTRATO> dcon = dc.GetEntities();
+        //        cmbDetalle.ItemsSource = dcon;
+        //        cmbDetalle.SelectedValuePath = "Valor_Neto";
+        //        cmbDetalle.DisplayMemberPath = "Cantidad";
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Error:", ex.Message);
+        //    }
+
+        //}
+
+        //private void RegistrarFechaTermino()
+        //{
+        //    ServicioContrato sc = new ServicioContrato();
+        //    CONTRATO c = new CONTRATO();
+        //    c.Termino = 
+        //}
+
+
+
+
+
+        //{
+        //    try
+        //    {
+        //        List<ABONOS> abonos = Sa.GetEntities();
+        //        cmbNROAbono.ItemsSource = abonos;
+        //        cmbNROAbono.SelectedValuePath = "NRO Abono";
+        //        cmbNROAbono.DisplayMemberPath = "Monto";
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Error:", ex.Message);
+        //    }
+
+        //}
 
 
 
@@ -51,12 +95,11 @@ namespace Views
         //{
         //    try
         //    {
-        //       ABONOS abonos = Sa.GetEntity(txtNROAbono.Text);
+        //       ABONOS abonos = Sa.GetEntity(txtnroAbono.Text);
         //        if (abonos != null)
         //        {
         //            MessageBox.Show("Exito:", "Abono encontrado con exito");
-        //            cmbNROAbono.Text= abonos.Monto;
-
+        //            cmbBuscar.Text = abonos.Monto.ToString();
         //        }
         //        else
         //        {
@@ -76,8 +119,14 @@ namespace Views
 
         private void Btn_consultar_Click(object sender, RoutedEventArgs e)
         {
+
+
+            // BuscarDatosAbonos();
+            txb_monto.Text = "90000";
+
             
-           // BuscarDatosAbonos();
+            //BuscarDatosAbonos();
+
         }
 
         private void Btn_atras_Click(object sender, RoutedEventArgs e)

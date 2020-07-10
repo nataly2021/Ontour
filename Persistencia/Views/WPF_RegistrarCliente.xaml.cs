@@ -95,7 +95,7 @@ namespace Views
 
                 };
                 sc.AddEntity(cliente);
-                MessageBox.Show("Exito:", "Datos del autor registrados correctamente!!!");
+                MessageBox.Show("Exito:", "Datos del cliente registrados correctamente!!!");
 
             }
             catch (ArgumentException ex)
@@ -110,7 +110,7 @@ namespace Views
 
         private void Btn_aceptar_Click(object sender, RoutedEventArgs e)
         {
-            RegistrarCliente();
+            
             MessageBox.Show("Cliente Agregado!!");
 
         }

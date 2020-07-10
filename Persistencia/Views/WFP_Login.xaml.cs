@@ -48,12 +48,7 @@ namespace Views
         private void OnClick(object sender, RoutedEventArgs e)
         {
             ValidarIngreso();
-            // string user_input =usuario.Text;
-            //string pass_input = password.Password;
-
-            //WPF_MenuPrincipal window = new WPF_MenuPrincipal();
-            //window.Show();
-            //this.Close();
+            
         }
     }
 }
